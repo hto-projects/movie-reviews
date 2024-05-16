@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require("mongoose");
 const configKeys = require("./config/keys");
 
-const hostname = 'localhost';
 const port = process.env.PORT || 8080;
 
 const index = require('./routes/index');
@@ -36,4 +35,4 @@ function listenCallback() {
 	console.log(`Server Running on http://${hostname}:${port}`);
 }
 
-app.listen(port, hostname, listenCallback);
+app.listen(port, listenCallback);
