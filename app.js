@@ -32,7 +32,7 @@ app.get('/view/:id', review.viewReviewPage);
 app.post('/add', review.addReview);
 
 function listenCallback() {
-	console.log(`Server Running on http://${hostname}:${port}`);
+	console.log(`Server Running`);
 }
 
 app.listen(port, listenCallback);
