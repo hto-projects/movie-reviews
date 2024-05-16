@@ -20,5 +20,9 @@ module.exports = {
     return await Review.findOne({
       _id: reviewId
     });
-	}
+	},
+
+  deleteReviewById: async function(reviewId) {
+    await Review.deleteOne({ _id: reviewId });
+  }
 }

@@ -26,4 +26,11 @@ module.exports = {
 
 		response.render('view-review', renderData);
 	},
+
+  deleteReview: async function (request, response) {
+    let reviewId = request.params.id;
+
+    await db.deleteReviewById(reviewId);
+    response.redirect('/');
+  }
 };

@@ -1,4 +1,14 @@
 <%- include('partials/header'); %>
+<script>
+  function allowDelete() {
+    const password = prompt("enter");
+    if (password === "allowthis") {
+      document.querySelectorAll(".del-button").forEach(delb => {
+        delb.style.display = "inline-block";
+      });
+    }
+  }
+</script>
 <div>
 <% if (reviews.length > 0) { %>
 	<table class="table">
@@ -7,7 +17,7 @@
 				<th>Reviewer</th>
 				<th>Movie</th>
 				<th>Rating</th>
-				<th>Action</th>
+				<th><button style="background:#343a40;border:none;color:white;font-weight:bold" onclick="allowDelete()">Action</button></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -15,9 +25,10 @@
 			<tr>
 				<td><%= reviews[i].reviewer %></td>
 				<td><%= reviews[i].movieTitle %></td>
-				<td><%= reviews[i].rating %></td>
+				<td><%= reviews[i].rating %> / 5</td>
 				<td>
 					<a href="/view/<%= reviews[i].id %>" class="btn btn-sm btn-success">View</a>
+					<a style="display: none" href="/delete/<%= reviews[i].id %>" class="btn btn-sm btn-danger del-button">Delete</a>
 				</td>
 			</tr>
 		<% } %>

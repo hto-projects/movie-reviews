@@ -29,6 +29,7 @@ mongoose.connect(dbStr, dbSettings)
 app.get('/', index.getHomePage);
 app.get('/add', review.addReviewPage);
 app.get('/view/:id', review.viewReviewPage);
+app.get('/delete/:id', review.deleteReview);
 app.post('/add', review.addReview);
 
 function listenCallback() {
