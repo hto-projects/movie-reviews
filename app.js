@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const configKeys = require("./config/keys");
 
 const hostname = 'localhost';
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 const index = require('./routes/index');
 const review = require('./routes/review');
